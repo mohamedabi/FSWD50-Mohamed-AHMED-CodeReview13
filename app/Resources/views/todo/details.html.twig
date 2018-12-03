@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+       <a class="btn btn-default" href="/">Back to Events</a>
+       <hr>
+ <h2 class="page-header">{{todo.name}}</h2>
+       <ul class="list-group">
+ <li class="list-group-item">img: {{todo.img}}</li>
+ <li class="list-group-item">capacity: {{todo.capacity}}</li>
+ <li class="list-group-item">email: {{todo.email}}</li>
+ <li class="list-group-item">address: {{todo.address}}</li>
+ <li class="list-group-item">Type: {{todo.Type}}</li>
+
+ <li class="list-group-item">URL: {{todo.URL}}</li>
+ <li class="list-group-item">number: {{todo.number}}</li>
+  <li class="list-group-item">Due: <strong> {{todo.date|date('F j, Y, g:i a')}} </strong> </li>
+
+       </ul>
+       <p>
+               {{todo.description}}
+       </p>
+{% endblock %}

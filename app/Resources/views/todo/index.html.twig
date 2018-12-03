@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+       
+<h2 class="page-header"> The new Events in Vienna </h2>
+  <table class="table table-striped">
+   <thead>
+       
+        <tr>
+           <th style=" text-align:center">#</th>
+           <th style=" text-align:center">Img</th>
+           <th style=" text-align:center">Name</th>
+           <th style=" text-align:center">Date</th>
+           <th style=" text-align:center">Description</th>
+           <th style=" text-align:center">Capacity</th>
+           <th style=" text-align:center">Email</th>
+           <th style=" text-align:center">Number</th>
+           <th style=" text-align:center">Address</th>
+           <th style=" text-align:center">URL</th>
+           <th style=" text-align:center">Type</th>
+           <th style=" text-align:center"></th>
+
+
+
+       </tr>
+   </thead>
+{% for todo in todos %}
+   <tbody>
+       <tr style="text-align: center;">
+           <th scope="row">{{todo.id}}</th>
+           <td><div style="width:290px"><img src="{{todo.img}}" ></div></td>
+           <td>{{todo.name}}</td>
+           <td>{{todo.date|date('F j, Y, g:i a')}}</td>
+           <td>{{todo.description}}</td>
+           <td>{{todo.capacity}}</td>
+           <td>{{todo.email}}</td>
+           <td>{{todo.number}}</td>
+           <td>{{todo.address}}</td>
+           <td>{{todo.URL}}</td>
+           <td>{{todo.Type}}</td>  
+
+
+
+           <td> <a href="/todo/details/{{todo.id}}" class="btn btn-success">View</a>
+                   
+           <a href="/todo/edit/{{todo.id}}" class="btn btn-default">Edit</a>
+           <a href="/todo/delete/{{todo.id}}" class="btn btn-danger">Delete</a>        
+           </td>
+     </tr> 
+{% endfor %}
+   </tbody>
+   </table>
+{% endblock %}
